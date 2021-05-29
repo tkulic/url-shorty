@@ -1,0 +1,35 @@
+@use "colors";
+
+@mixin grid-container($rows) {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: $rows;
+    grid-gap: 1em;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin button($border-radius: 30px) {
+    display: block;
+    border: none;
+    border-radius: $border-radius;
+    font-weight: 700;
+    padding: 0.6em 1.6em;
+    background: colors.$cyan;
+    transition: opacity 400ms;
+    font-family: inherit;
+    font-size: inherit;
+    color: white;
+    margin: 0 auto 1em;
+    transition: background-color 250ms;
+    &:hover {
+        cursor: pointer;
+        outline: none;
+        background: lighten(colors.$cyan, 10%);
+    }
+}
+
+%description {
+    color: colors.$gray;
+}
