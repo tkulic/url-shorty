@@ -36,7 +36,7 @@ body {
     font-family: "Poppins", sans-serif;
     -webkit-font-smoothing: antialiased;
     color: colors.$gray-violet;
-    line-height: 1.6;
+    text-align: center;
 }
 
 img {
@@ -47,7 +47,9 @@ img {
 ======================================== */
 
 h1 {
+    font-size: 2.3rem;
     color: colors.$dark;
+    line-height: 1;
 }
 
 h2 {
@@ -55,11 +57,15 @@ h2 {
 }
 
 h3 {
-    color: colors.$gray-violet;
+    color: colors.$dark-violet;
 }
 
 h4 {
-    color: colors.$gray;
+    color: colors.$dark-blue;
+}
+
+p {
+    line-height: 1.6;
 }
 
 /* 3. Components
@@ -73,14 +79,6 @@ h4 {
     @include mixins.button;
     background: transparent;
     color: white;
-}
-
-input {
-    padding: 1em;
-    border: none;
-    color: inherit;
-    width: 100%;
-    display: block;
 }
 
 /* 4. Header
@@ -107,24 +105,26 @@ header {
     border: none;
     color: inherit;
     font-size: 1.5rem;
-}
-
-.hidden {
-    opacity: 0.5;
-    display: none;
-    transition: all 250ms;
+    transition: color 250ms;
+    &:hover {
+        cursor: pointer;
+        color: colors.$dark-blue;
+    }
 }
 
 .nav-header {
     position: absolute;
     z-index: 1;
     top: 50px;
-    left: 5vw;
-    right: 5vw;
+    left: 15vw;
+    right: 15vw;
     background: colors.$dark-violet;
     text-align: center;
     border-radius: 10px;
     padding: 1em 2em;
+    visibility: hidden;
+    opacity: 0.3;
+    transition: all 250ms ease-out;
 
     ul {
         list-style: none;
@@ -151,8 +151,144 @@ header {
     width: 100%;
 }
 
+.visible {
+    visibility: initial;
+    opacity: 1;
+    left: 5vw;
+    right: 5vw;
+}
+
 /* 4. Hero section
 ======================================== */
+
+.hero {
+    @include mixins.grid-container(1fr);
+    margin-bottom: 2em;
+}
+
+.hero-image {
+    grid-row: 1 / 2;
+    display: block;
+    width: 150%;
+}
+
+/* 5. Main section
+======================================== */
+
+main {
+    @include mixins.grid-container(1fr);
+    background: hsl(0, 0%, 93%);
+    position: relative;
+    &::before {
+        content: "";
+        display: block;
+        background-color: white;
+        width: 120%;
+        height: 100px;
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        right: 0;
+        left: 0;
+    }
+
+    form {
+        background: colors.$dark-violet url("../images/bg-shorten-mobile.svg");
+        padding: 1em;
+        z-index: 1;
+        border-radius: 10px;
+    }
+}
+
+.input-url {
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    display: block;
+    border-radius: 5px;
+    padding: 0.6em 1em;
+    border: none;
+}
+
+.button-primary-wide {
+    @include mixins.button(5px);
+    width: 100%;
+}
+
+.error-message {
+    font-style: italic;
+    font-size: 0.8rem;
+    color: hsl(0, 36%, 50%);
+    text-align: left;
+}
+
+.error-border {
+    border: 1px solid hsl(0, 36%, 50%);
+}
+
+.result-container {
+    @include mixins.card;
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.source-url {
+    color: colors.$dark-blue;
+    padding-bottom: 1em;
+    border-bottom: 1px solid hsl(0, 0%, 93%);
+}
+
+.result-url {
+    color: colors.$cyan;
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.features-container {
+    margin-top: 4rem;
+    position: relative;
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 0;
+        background-color: colors.$cyan;
+        width: 10px;
+        height: 100%;
+        top: 0;
+        left: 50%;
+        margin-left: -5px;
+    }
+}
+
+.card {
+    @include mixins.card;
+    margin-bottom: 5rem;
+    position: relative;
+    z-index: 1;
+
+    span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: colors.$dark-violet;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin: -60px auto 0;
+
+        img {
+            display: block;
+            width: 50%;
+        }
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+}
 
 @media (min-width: 720px) {
     :root {

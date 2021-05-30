@@ -9,6 +9,7 @@ import Features from './Features'
 export default function Main() {
     // const [urlInput, setUrlInput] = useState("")
     // const [results, setResults] = useState({})
+    // const [errorMessage, setErrorMessage] = useState("")
 
 
     //      RESPONSE
@@ -32,9 +33,7 @@ export default function Main() {
     return (
         <main>
             <UrlBar />
-            <ul>
-                <Result />
-            </ul>
+            <Result />
             <Features />
         </main>
     )

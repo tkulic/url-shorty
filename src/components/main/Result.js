@@ -2,15 +2,13 @@ import React from 'react'
 
 export default function Result(props) {
     return (
-        <li>
-            <div>
-                <p>http.....</p>
-            </div>
+        <div className="result-container">
+            <p className="source-url">http://www.facebook.com</p>
 
             <div>
-                <a href="#">http.....</a>
-                <button className="button-primary" aria-live="polite">Copy</button>
+                <a className="result-url" href="#">http://rel.link455352</a>
+                <button className="button-primary-wide" aria-live="polite">Copy</button>
             </div>
-        </li>
+        </div>
     )
 }

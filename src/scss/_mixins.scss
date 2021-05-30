@@ -1,10 +1,10 @@
 @use "colors";
 
 @mixin grid-container($rows) {
-    width: 90%;
     margin: 0 auto;
+    padding: 0 1.3rem;
     display: grid;
-    grid-template-rows: $rows;
+    grid-template-columns: $rows;
     grid-gap: 1em;
     justify-content: center;
     align-items: center;
@@ -30,6 +30,8 @@
     }
 }
 
-%description {
-    color: colors.$gray;
+@mixin card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1em;
 }
