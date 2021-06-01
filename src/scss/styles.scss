@@ -12,7 +12,7 @@
 @use "colors";
 @use "mixins";
 
-$breakpoint: 860px;
+$breakpoint: 960px;
 
 /* 1. Global Styles
 ======================================== */
@@ -190,13 +190,15 @@ header {
         visibility: initial;
         opacity: 1;
         transition: all 300ms ease;
+        justify-content: space-between;
+        width: 90%;
 
         ul {
             display: flex;
             list-style: none;
             padding: 0;
             border-bottom: none;
-            margin-right: 5vw;
+            margin-left: 1em;
 
             li {
                 margin: 0 0.8em;
@@ -215,6 +217,8 @@ header {
 
     .auth-container {
         display: flex;
+        width: 250px;
+        margin: 0;
     }
 
     .button-secondary {
@@ -310,7 +314,7 @@ main {
 .error-message {
     font-style: italic;
     font-size: 0.7rem;
-    color: hsl(0, 66%, 64%);
+    color: colors.$red;
     text-align: left;
     margin-top: 0.3em;
 }
@@ -336,6 +340,10 @@ main {
     color: colors.$cyan;
     display: block;
     margin-bottom: 0.5em;
+
+    &:hover {
+        color: darken(colors.$cyan, 10%);
+    }
 }
 
 .features-container {
@@ -408,10 +416,16 @@ main {
 
     .result-container {
         @include mixins.grid-container(repeat(3, 1fr));
+        width: 100%;
+        padding: 1em 2em;
 
         .button-primary-wide {
-            margin: 0.7em;
+            margin: 0;
         }
+    }
+
+    .result-container:last-of-type {
+        margin-bottom: 4em;
     }
 
     .source-url {
@@ -504,6 +518,11 @@ footer {
 
         li {
             margin: 0.5em;
+
+            &:hover {
+                color: colors.$cyan;
+                cursor: pointer;
+            }
         }
     }
 }
@@ -511,12 +530,17 @@ footer {
 .social-media-container {
     display: flex;
     justify-content: space-between;
-    width: 50%;
     margin: 1em auto;
 }
 
 .social-media-icon {
-    width: 20px;
+    color: white;
+    margin: 0 0.5em;
+
+    &:hover {
+        color: colors.$cyan;
+        cursor: pointer;
+    }
 }
 
 .attribution {
@@ -562,7 +586,7 @@ footer {
 
     .social-media-container {
         margin-top: 0;
-        width: 80%;
+        width: 100%;
     }
 
     .attribution {
