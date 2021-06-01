@@ -8,8 +8,8 @@ import icon3 from "../../images/icon-fully-customizable.svg"
 export default function Features() {
     return (
         <section>
-            <h2>Advanced Statistics</h2>
-            <p>Track how your links are performing across the web with our
+            <h2 className="features-title">Advanced Statistics</h2>
+            <p className="features-description">Track how your links are performing across the web with our
                     advanced statistics dashboard.</p>
             <div className="features-container">
                 <Card

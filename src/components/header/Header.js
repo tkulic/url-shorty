@@ -17,9 +17,9 @@ export default function Header() {
                 >
                     <MenuOpen />
                 </button>
+                <Nav isOpen={isMenuOpen} />
             </div>
 
-            <Nav isOpen={isMenuOpen} />
         </header>
     )
 }

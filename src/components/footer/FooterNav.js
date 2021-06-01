@@ -6,8 +6,8 @@ export default function FooterNav(props) {
             <h4>{props.footerNavTitle}</h4>
             <nav className="nav-footer">
                 <ul>
-                    {props.footerNavLinks.map(item => (
-                        <li>{item}</li>
+                    {props.footerNavLinks.map((item, index) => (
+                        <li key={index}>{item}</li>
                     ))}
                 </ul>
             </nav>

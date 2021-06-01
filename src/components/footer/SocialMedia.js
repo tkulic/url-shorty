@@ -2,10 +2,15 @@ import React from 'react'
 
 export default function SocialMedia(props) {
     return (
-        <div>
-            {props.socialMediaItems.map(item => {
-                <img src={item} alt={`${item} icon`} />
-            })}
+        <div className="social-media-container">
+            {props.socialMediaItems.map((item, index) => (
+                <img
+                    key={index}
+                    src={item}
+                    alt={`${item} icon`}
+                    className="social-media-icon"
+                />
+            ))}
         </div>
     )
 }

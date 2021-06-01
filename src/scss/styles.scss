@@ -12,6 +12,8 @@
 @use "colors";
 @use "mixins";
 
+$breakpoint: 860px;
+
 /* 1. Global Styles
 ======================================== */
 
@@ -43,6 +45,11 @@ img {
     width: 100%;
 }
 
+// *:focus {
+//     outline: 4px solid colors.$cyan;
+//     outline-offset: 4px;
+// }
+
 /* 2. Typography
 ======================================== */
 
@@ -61,7 +68,8 @@ h3 {
 }
 
 h4 {
-    color: colors.$dark-blue;
+    color: white;
+    margin-bottom: 0;
 }
 
 p {
@@ -86,6 +94,10 @@ p {
 
 header {
     position: relative;
+
+    .logo {
+        color: colors.$dark-blue;
+    }
 }
 
 .flex-container {
@@ -94,10 +106,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.logo {
-    color: colors.$dark-blue;
 }
 
 .menu-open {
@@ -123,8 +131,8 @@ header {
     border-radius: 10px;
     padding: 1em 2em;
     visibility: hidden;
-    opacity: 0.3;
-    transition: all 250ms ease-out;
+    opacity: 0.2;
+    transition: all 300ms ease;
 
     ul {
         list-style: none;
@@ -158,6 +166,67 @@ header {
     right: 5vw;
 }
 
+@media (min-width: $breakpoint) {
+    :root {
+        font-size: 18px;
+    }
+
+    body {
+        text-align: left;
+    }
+
+    .menu-open {
+        display: none;
+    }
+
+    .nav-header {
+        position: relative;
+        top: initial;
+        left: initial;
+        right: initial;
+        display: flex;
+        padding: 0;
+        background: transparent;
+        visibility: initial;
+        opacity: 1;
+        transition: all 300ms ease;
+
+        ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            border-bottom: none;
+            margin-right: 5vw;
+
+            li {
+                margin: 0 0.8em;
+
+                a {
+                    color: colors.$gray-violet;
+                    text-decoration: none;
+                    font-weight: 700;
+                    &:hover {
+                        color: colors.$dark-violet;
+                    }
+                }
+            }
+        }
+    }
+
+    .auth-container {
+        display: flex;
+    }
+
+    .button-secondary {
+        color: colors.$gray-violet;
+
+        &:hover {
+            background: transparent;
+            color: colors.$dark-violet;
+        }
+    }
+}
+
 /* 4. Hero section
 ======================================== */
 
@@ -170,6 +239,27 @@ header {
     grid-row: 1 / 2;
     display: block;
     width: 150%;
+}
+
+@media (min-width: $breakpoint) {
+    .hero {
+        @include mixins.grid-container(repeat(3, 1fr));
+        margin-bottom: 3em;
+
+        .button-primary {
+            margin-left: 0;
+        }
+    }
+
+    .hero-content {
+        grid-column: 1 / 3;
+        margin-right: 4em;
+    }
+
+    .hero-image {
+        grid-column: 3;
+        width: 170%;
+    }
 }
 
 /* 5. Main section
@@ -193,7 +283,8 @@ main {
     }
 
     form {
-        background: colors.$dark-violet url("../images/bg-shorten-mobile.svg");
+        background: colors.$dark-violet url("../images/bg-shorten-desktop.svg");
+        background-size: cover;
         padding: 1em;
         z-index: 1;
         border-radius: 10px;
@@ -218,9 +309,10 @@ main {
 
 .error-message {
     font-style: italic;
-    font-size: 0.8rem;
-    color: hsl(0, 36%, 50%);
+    font-size: 0.7rem;
+    color: hsl(0, 66%, 64%);
     text-align: left;
+    margin-top: 0.3em;
 }
 
 .error-border {
@@ -235,8 +327,9 @@ main {
 
 .source-url {
     color: colors.$dark-blue;
-    padding-bottom: 1em;
-    border-bottom: 1px solid hsl(0, 0%, 93%);
+    margin: 0 auto 0.5em;
+    padding-bottom: 0.5em;
+    border-bottom: 2px solid hsl(0, 0%, 93%);
 }
 
 .result-url {
@@ -255,7 +348,7 @@ main {
         position: absolute;
         z-index: 0;
         background-color: colors.$cyan;
-        width: 10px;
+        width: 8px;
         height: 100%;
         top: 0;
         left: 50%;
@@ -290,22 +383,190 @@ main {
     }
 }
 
-@media (min-width: 720px) {
-    :root {
-        font-size: 20px;
+@media (min-width: $breakpoint) {
+    form {
+        @include mixins.grid-container(1em repeat(10, 1fr) 1em);
+        background: colors.$dark-violet url("../images/bg-shorten-desktop.svg");
+        width: 100%;
+    }
+
+    .input-url {
+        grid-column: 2 / 9;
+        margin-top: 1em;
+    }
+
+    .button-primary-wide {
+        grid-row: 1 / 2;
+        grid-column: -2 / -5;
+        margin-top: 1em;
+    }
+
+    .error-message {
+        grid-column: 2 / 8;
+        margin: -1em 0 1em;
+    }
+
+    .result-container {
+        @include mixins.grid-container(repeat(3, 1fr));
+
+        .button-primary-wide {
+            margin: 0.7em;
+        }
+    }
+
+    .source-url {
+        grid-column: 1 / 3;
+        border-bottom: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .col-right {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .result-url {
+        margin: 0 1em;
+    }
+
+    .features-title,
+    .features-description {
+        text-align: center;
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    .features-container {
+        @include mixins.grid-container(repeat(3, 1fr));
+        padding: 0;
+        gap: 1.5em;
+
+        .card:nth-of-type(2) {
+            margin-top: 4em;
+        }
+
+        .card:nth-of-type(3) {
+            margin-top: 8em;
+        }
+
+        &::before {
+            width: 80%;
+            height: 8px;
+            left: 15%;
+            top: 40%;
+        }
     }
 }
 
-@media (min-width: 1440px) {
-    :root {
-        font-size: 22px;
+/* 5. CTA section
+======================================== */
+
+.cta-section {
+    background: colors.$dark-violet url("../images/bg-boost-mobile.svg");
+    padding: 4em 0;
+
+    h2 {
+        color: white;
+        margin-top: 0;
     }
+}
+
+@media (min-width: $breakpoint) {
+    .cta-section {
+        background: colors.$dark-violet url("../images/bg-boost-desktop.svg");
+        background-size: cover;
+        padding: 4em 0;
+
+        h2 {
+            text-align: center;
+        }
+    }
+}
+
+/* 5. Footer
+======================================== */
+
+footer {
+    @include mixins.grid-container(1fr);
+    background: colors.$dark;
+    padding: 2em;
+
+    .logo {
+        color: white;
+        margin: 0 auto;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            margin: 0.5em;
+        }
+    }
+}
+
+.social-media-container {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin: 1em auto;
+}
+
+.social-media-icon {
+    width: 20px;
 }
 
 .attribution {
-    font-size: 11px;
-    text-align: center;
+    font-size: 0.7rem;
+    opacity: 0.3;
+
+    p {
+        margin: 0;
+    }
+
+    a {
+        color: colors.$cyan;
+        text-decoration: none;
+
+        &:hover {
+            color: (colors.$cyan, 30%);
+            text-decoration: underline;
+        }
+    }
 }
-.attribution a {
-    color: hsl(228, 45%, 44%);
+
+@media (min-width: $breakpoint) {
+    footer {
+        @include mixins.grid-container(repeat(6, 1fr));
+        align-items: start;
+        padding: 4em;
+
+        .logo {
+            grid-column: 1 / 3;
+            margin-left: 0;
+        }
+
+        h4 {
+            margin-top: 0;
+        }
+
+        ul {
+            li {
+                margin-left: 0;
+            }
+        }
+    }
+
+    .social-media-container {
+        margin-top: 0;
+        width: 80%;
+    }
+
+    .attribution {
+        grid-column: 1 / 7;
+        text-align: center;
+    }
 }

@@ -2,8 +2,8 @@
 
 @mixin grid-container($rows) {
     margin: 0 auto;
-    padding: 0 1.3rem;
     display: grid;
+    padding: 0 5vw;
     grid-template-columns: $rows;
     grid-gap: 1em;
     justify-content: center;
@@ -21,7 +21,7 @@
     font-family: inherit;
     font-size: inherit;
     color: white;
-    margin: 0 auto 1em;
+    margin: 0 auto;
     transition: background-color 250ms;
     &:hover {
         cursor: pointer;
