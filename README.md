@@ -29,12 +29,13 @@ Users should be able to:
 
 ## Links
 
--   Solution URL: [Add solution URL here](https://your-solution-url.com)
--   Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+-   [Solution on Frontend Mentor](https://your-solution-url.com)
+-   [Live website](http://tkulic.github.io/url-shorty)
+-   [GitHub repository](https://github.com/tkulic/url-shorty)
 
 ## Workflow
 
-1. Project initialization as a public repository on [GitHub](https://github.com/)
+1. Project initialization as a public repository on GitHub
 2. Planning out HTML structure and CSS classes based on design files
 3. Creating well-structured content as React components with JSX
 4. Styling the page from top to bottom by utilizing _mobile-first_ approach
