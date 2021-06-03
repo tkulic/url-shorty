@@ -1,17 +1,18 @@
-# Frontend Mentor - Shortly URL shortening API Challenge solution
+# Shortly - URL shortening App
 
 This is a solution to the [Shortly URL shortening API Challenge challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G). Frontend Mentor challenges help you improve coding skills by building realistic projects.
 
 ## Table of contents
 
--   [The challenge](#the-challenge)
--   [Screenshot](#screenshot)
+-   [Challenge](#challenge)
 -   [Links](#links)
--   [My process](#my-process)
--   [Built with](#built-with)
+-   [Technologies](#technologies)
+-   [Wokflow](#workflow)
+-   [Sources](#sources)
+-   [Screenshots](#screenshots)
 -   [Author](#author)
 
-## The challenge
+## Challenge
 
 Users should be able to:
 
@@ -22,16 +23,20 @@ Users should be able to:
 -   Receive an error message when the `form` is submitted if:
     -   The `input` field is empty
 
-## Screenshots
-
-![Desktop layout](./screenshots/Screenshot_desktop.png)
-![Mobile layout](./screenshots/Screenshot_mobile.png)
-
 ## Links
 
 -   [Solution on Frontend Mentor](https://www.frontendmentor.io/solutions/react-scss-shrtcode-api-sessionstorage-clipboard-api-wbayhjxMP)
 -   [Live website](https://tkulic.github.io/url-shorty)
 -   [GitHub repository](https://github.com/tkulic/url-shorty)
+
+## Technologies
+
+-   Semantic HTML5 markup
+-   SCSS
+-   [React](https://reactjs.org/) - JS library (Functional components & Hooks)
+-   [Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API) of the Navigator object
+-   [Session storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage)
+-   [Shrtcode API](https://shrtco.de)
 
 ## Workflow
 
@@ -44,16 +49,17 @@ Users should be able to:
 7. Integrating Session storage to prevent losing results after refreshing the browser
 8. Configuring repository to publish code with GitHub Pages
 
-## Built with
+## Sources
 
--   Semantic HTML5 markup
--   SCSS
--   Flexbox
--   CSS Grid
--   [React](https://reactjs.org/) - JS library (Functional components & Hooks)
--   [Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API) of the Navigator object
--   [Session storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage)
--   [shrtcode API](https://shrtco.de/docs/)
+-   Icons and logos: [Remixicon](https://remixicon.com/)
+-   Animated loader: [Preloaders](https://icons8.com/preloaders/)
+-   [Shrtcode API Docs](https://shrtco.de/docs/)
+-   [MDN Web Docs](https://developer.mozilla.org/en-US/)
+
+## Screenshots
+
+![Desktop layout](./screenshots/Screenshot_desktop.png)
+![Mobile layout](./screenshots/Screenshot_mobile.png)
 
 ## Author
 
