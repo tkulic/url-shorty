@@ -29,8 +29,8 @@ Users should be able to:
 
 ## Links
 
--   [Solution on Frontend Mentor](https://your-solution-url.com)
--   [Live website](http://tkulic.github.io/url-shorty)
+-   [Solution on Frontend Mentor](https://www.frontendmentor.io/solutions/react-scss-shrtcode-api-sessionstorage-clipboard-api-wbayhjxMP)
+-   [Live website](https://tkulic.github.io/url-shorty)
 -   [GitHub repository](https://github.com/tkulic/url-shorty)
 
 ## Workflow
@@ -40,7 +40,7 @@ Users should be able to:
 3. Creating well-structured content as React components with JSX
 4. Styling the page from top to bottom by utilizing _mobile-first_ approach
 5. Adding media queries for desktop layout
-6. Impementing main functionality of the website - shortening valid URLs
+6. Implementing main functionality of the website - shortening valid URLs
 7. Integrating Session storage to prevent losing results after refreshing the browser
 8. Configuring repository to publish code with GitHub Pages
 
