@@ -22,7 +22,7 @@ export default function Result(props) {
     return (
         props.result.code
             ? <div className="result-container">
-                <p className="source-url">{trimLink(props.result.original_link)}</p>
+                <p className="source-url" title={props.result.original_link}>{trimLink(props.result.original_link)}</p>
 
                 <div className="col-right">
                     <a

@@ -4,19 +4,14 @@ This is a solution to the [Shortly URL shortening API Challenge challenge on Fro
 
 ## Table of contents
 
--   [Overview](#overview)
-    -   [The challenge](#the-challenge)
-    -   [Screenshot](#screenshot)
-    -   [Links](#links)
+-   [The challenge](#the-challenge)
+-   [Screenshot](#screenshot)
+-   [Links](#links)
 -   [My process](#my-process)
-    -   [Built with](#built-with)
+-   [Built with](#built-with)
 -   [Author](#author)
 
-## Overview
-
-Shrtcode is a secure and reliable URL Shortener. It generates short links which redirect to a longer link. No less, no more. You can learn more by visiting [shrtcode FAQ](https://pages.tibush.com/shrtcode/frequently-asked-questions-faq).
-
-### The challenge
+## The challenge
 
 Users should be able to:
 
@@ -27,42 +22,39 @@ Users should be able to:
 -   Receive an error message when the `form` is submitted if:
     -   The `input` field is empty
 
-### Screenshot
+## Screenshots
 
-![](./screenshot.jpg)
+![Desktop layout](./screenshots/Screenshot_desktop.png)
+![Mobile layout](./screenshots/Screenshot_mobile.png)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
-
-### Links
+## Links
 
 -   Solution URL: [Add solution URL here](https://your-solution-url.com)
 -   Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-## My process
+## Workflow
 
-1. Initialized the project as a public repository on [GitHub](https://github.com/).
-2. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-3. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-4. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-5. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
-6. Configured repository to publish code to a web address.
+1. Project initialization as a public repository on [GitHub](https://github.com/)
+2. Planning out HTML structure and CSS classes based on design files
+3. Creating well-structured content as React components with JSX
+4. Styling the page from top to bottom by utilizing _mobile-first_ approach
+5. Adding media queries for desktop layout
+6. Impementing main functionality of the website - shortening valid URLs
+7. Integrating Session storage to prevent losing results after refreshing the browser
+8. Configuring repository to publish code with GitHub Pages
 
-### Built with
+## Built with
 
 -   Semantic HTML5 markup
--   SASS
+-   SCSS
 -   Flexbox
 -   CSS Grid
--   Mobile-first workflow
--   [React](https://reactjs.org/) - JS library
+-   [React](https://reactjs.org/) - JS library (Functional components & Hooks)
+-   [Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API) of the Navigator object
+-   [Session storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage)
+-   [shrtcode API](https://shrtco.de/docs/)
 
 ## Author
 
--   Website - [Toni Kulić](https://www.your-site.com)
+-   GitHub profile - [Toni Kulić](https://github.com/tkulic)
 -   Frontend Mentor - [@tkulic](https://www.frontendmentor.io/profile/tkulic)

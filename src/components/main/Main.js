@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import UrlBar from './UrlBar'
 import Result from './Result'
@@ -10,9 +10,21 @@ const API_URL = "https://api.shrtco.de/v2/shorten?url="
 
 export default function Main() {
     const [urlInput, setUrlInput] = useState("")
-    const [result, setResult] = useState({})
+    const [results, setResults] = useState([])
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState({})
+
+    // check session storage on page load
+    useEffect(() => {
+        if (!results.length) {
+            const clientStorage = JSON.parse(sessionStorage.getItem("resultsArray"))
+            if (clientStorage === null) {
+                setResults([])
+            } else {
+                setResults(clientStorage)
+            }
+        }
+    }, [])
 
     function inputHandler(e) {
         setUrlInput(e.target.value)
@@ -31,15 +43,19 @@ export default function Main() {
                 if (!data.ok) {
                     setError(data)
                     setUrlInput("")
-                    setResult({})
                     return
                 }
                 setError({})
                 setUrlInput("")
-                setResult(data.result)
+                // update state and session storage
+                setResults([data.result, ...results])
+                sessionStorage.setItem("resultsArray", JSON.stringify([data.result, ...results]))
             })
             .catch(error => {
-                console.log(error.error)
+                setError({ error: error.message, ok: false })
+                setUrlInput("")
+                setIsLoading(false)
+                console.log(error)
             })
     }
 
@@ -52,8 +68,7 @@ export default function Main() {
                 clickHandler={clickHandler}
             />
             {isLoading ? <img src={loader} alt="Loading..." aria-live="polite" className="loader" /> : null}
-
-            <Result result={result} />
+            {results.length ? results.map(result => <Result key={result.code} result={result} />) : null}
             <Features />
         </main>
     )
