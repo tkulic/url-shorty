@@ -8,15 +8,13 @@ import CtaSection from './cta-section/CtaSection'
 import Footer from './footer/Footer'
 
 export default function App() {
-
-
     return (
-        <div>
+        <>
             <Header />
             <Hero />
             <Main />
             <CtaSection />
             <Footer />
-        </div>
+        </>
     )
 }

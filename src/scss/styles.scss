@@ -45,11 +45,6 @@ img {
     width: 100%;
 }
 
-// *:focus {
-//     outline: 4px solid colors.$cyan;
-//     outline-offset: 4px;
-// }
-
 /* 2. Typography
 ======================================== */
 
@@ -179,6 +174,10 @@ header {
         display: none;
     }
 
+    .flex-container {
+        max-width: 1200px;
+    }
+
     .nav-header {
         position: relative;
         top: initial;
@@ -249,6 +248,8 @@ header {
     .hero {
         @include mixins.grid-container(repeat(3, 1fr));
         margin-bottom: 3em;
+        max-width: 1200px;
+        padding: 0;
 
         .button-primary {
             margin-left: 0;
@@ -403,6 +404,7 @@ main {
         @include mixins.grid-container(1em repeat(10, 1fr) 1em);
         background: colors.$dark-violet url("../images/bg-shorten-desktop.svg");
         width: 100%;
+        max-width: 1200px;
     }
 
     .input-url {
@@ -424,6 +426,7 @@ main {
     .result-container {
         @include mixins.grid-container(repeat(6, 1fr));
         width: 100%;
+        max-width: 1200px;
         padding: 1em 2em;
 
         .button-primary-wide {
@@ -466,6 +469,7 @@ main {
         @include mixins.grid-container(repeat(3, 1fr));
         padding: 0;
         gap: 1.5em;
+        max-width: 1200px;
 
         .card:nth-of-type(2) {
             margin-top: 4em;
@@ -513,9 +517,14 @@ main {
 ======================================== */
 
 footer {
-    @include mixins.grid-container(1fr);
     background: colors.$dark;
+    padding: 0 5vw;
+}
+
+.footer-container {
+    @include mixins.grid-container(1fr);
     padding: 2em;
+    max-width: 1200px;
 
     .logo {
         color: white;
@@ -573,10 +582,10 @@ footer {
 }
 
 @media (min-width: $breakpoint) {
-    footer {
+    .footer-container {
         @include mixins.grid-container(repeat(6, 1fr));
         align-items: start;
-        padding: 4em;
+        padding: 4em 0 2em;
 
         .logo {
             grid-column: 1 / 3;
